@@ -9,6 +9,10 @@ body {
   background-color: #202c37;
   color: white; }
 
+a {
+  text-decoration: none;
+  color: inherit; }
+
 .container {
   width: 80%;
   max-width: 1440px;

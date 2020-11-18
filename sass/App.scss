@@ -1,0 +1,6 @@
+.countryGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	row-gap: 75px;
+	column-gap: 75px;
+}

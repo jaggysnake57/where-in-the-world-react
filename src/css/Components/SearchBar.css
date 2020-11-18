@@ -1,30 +1,30 @@
-.searchBar .container {
-  display: flex;
-  justify-content: space-between; }
-
-.searchBar form {
-  width: 40%;
-  position: relative; }
-  .searchBar form label {
-    position: absolute;
-    top: 16px;
-    left: 24px;
-    font-size: 1.5rem; }
-  .searchBar form .searchInput {
-    height: 60px;
-    width: 100%;
-    padding-left: 80px;
-    background-color: #2b3945;
+.searchBar {
+  margin-bottom: 50px; }
+  .searchBar .container {
+    display: flex;
+    justify-content: space-between; }
+  .searchBar form {
+    width: 40%;
+    position: relative; }
+    .searchBar form label {
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      font-size: 1.5rem; }
+    .searchBar form .searchInput {
+      height: 60px;
+      width: 100%;
+      padding-left: 80px;
+      background-color: #2b3945;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      box-shadow: 0px 0px 6px 7px rgba(0, 0, 0, 0.14); }
+  .searchBar .regionPicker {
+    background: #2b3945;
     border: none;
+    padding: 20px;
     color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 7px rgba(0, 0, 0, 0.14); }
-
-.searchBar .regionPicker {
-  background: #2b3945;
-  border: none;
-  padding: 20px;
-  color: white;
-  font-weight: 600; }
+    font-weight: 600; }

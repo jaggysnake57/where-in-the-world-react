@@ -1,17 +1,27 @@
 import React from 'react';
-import '../css/Components/Country.css';
+import { Link } from 'react-router-dom';
+import '../css/Components/CountryCard.css';
 
-const CountryCard = () => {
+const CountryCard = ({ countryDetails }) => {
+	const { name, capital, region, population, flag } = countryDetails;
 	return (
 		<div className="countryCard">
-			<h2>thsi is the country comp</h2>
-			{/* flag as div via background image */}
-			{/* details as div */}
-			{/* in details
-				h2 title - country
-				h3 and a span
-			
-			 */}
+			<Link to={`/${name}`}>
+				{/*//!FIXME - flags are different sizes */}
+				<img className="flag" src={flag} alt="" />
+				<div className="details">
+					<h2>{name}</h2>
+					<h3>
+						Population: <span>{population}</span>
+					</h3>
+					<h3>
+						Region: <span>{region}</span>
+					</h3>
+					<h3>
+						Capital: <span>{capital}</span>
+					</h3>
+				</div>
+			</Link>
 		</div>
 	);
 };
