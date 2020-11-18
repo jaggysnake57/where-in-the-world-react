@@ -1,0 +1,37 @@
+@import '../vars';
+
+.searchBar {
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+	form {
+		width: 40%;
+		position: relative;
+		label {
+			position: absolute;
+			top: 16px;
+			left: 24px;
+			font-size: 1.5rem;
+		}
+		.searchInput {
+			height: 60px;
+			width: 100%;
+			padding-left: 80px;
+			background-color: $DarkMainElements;
+			border: none;
+			color: $White;
+			font-size: 1rem;
+			font-weight: 600;
+			border-radius: 5px;
+			box-shadow: $boxShadow;
+		}
+	}
+	.regionPicker {
+		background: $DarkMainElements;
+		border: none;
+		padding: 20px;
+		color: $White;
+		font-weight: 600;
+	}
+}
