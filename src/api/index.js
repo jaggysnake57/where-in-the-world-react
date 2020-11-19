@@ -10,3 +10,6 @@ export const getAllCountries = () =>
 
 export const getOneCountry = (country) =>
 	axios.get(`${baseURL}name/${country}${singleCountryFields}`);
+
+export const searchCountries = (search) =>
+	axios.get(`${baseURL}name/${search}${allCountriesFields}`);

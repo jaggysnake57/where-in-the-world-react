@@ -25,10 +25,21 @@ export const countrySlice = createSlice({
 			state.oneCountry = action.payload;
 			// TODO - add to state as object not array
 		},
+		setSearchedCountries: (state, action) => {
+			state.searchedCountries = action.payload;
+		},
+		clearSearchedCountries: (state) => {
+			state.searchedCountries = [];
+		},
 	},
 });
 
-export const { setAllCountries, setOneCountry } = countrySlice.actions;
+export const {
+	setAllCountries,
+	setOneCountry,
+	setSearchedCountries,
+	clearSearchedCountries,
+} = countrySlice.actions;
 
 export const getAllCountries = () => async (dispatch) => {
 	try {
@@ -42,6 +53,15 @@ export const getOneCountry = (country) => async (dispatch) => {
 	try {
 		const { data } = await api.getOneCountry(country);
 		dispatch(setOneCountry(data));
+	} catch (err) {
+		console.log(err);
+	}
+};
+
+export const searchForCountries = (search) => async (dispatch) => {
+	try {
+		const { data } = await api.searchCountries(search);
+		dispatch(setSearchedCountries(data));
 	} catch (err) {
 		console.log(err);
 	}

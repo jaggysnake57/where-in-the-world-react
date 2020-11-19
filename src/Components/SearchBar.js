@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../css/Components/SearchBar.css';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+	searchForCountries,
+	selectCountries,
+	clearSearchedCountries,
+} from '../features/countries/countrySlice';
 
 const SearchBar = ({ setRegion }) => {
+	const [search, setSearch] = useState('');
+	const { searchedCountries } = useSelector(selectCountries);
+	const dispatch = useDispatch();
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		dispatch(searchForCountries(search));
+	};
+	const handleClear = () => {
+		dispatch(clearSearchedCountries());
+		setSearch([]);
+	};
+
 	return (
 		<div className="searchBar">
 			<div className="container">
-				<form>
+				<form onSubmit={(e) => handleSubmit(e)}>
 					<label htmlFor="">
 						<FontAwesomeIcon icon={faSearch} />
 					</label>
@@ -16,7 +35,15 @@ const SearchBar = ({ setRegion }) => {
 						onChange={() => {}}
 						className="searchInput"
 						placeholder="Search for a country....."
+						value={search}
+						onChange={(e) => setSearch(e.target.value)}
 					/>
+					<button
+						type="button"
+						className="btn"
+						onClick={() => handleClear()}>
+						reset
+					</button>
 				</form>
 				{/* TODO - update to correct picker */}
 				<select

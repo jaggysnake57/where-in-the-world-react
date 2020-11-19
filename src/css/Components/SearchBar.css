@@ -4,8 +4,9 @@
     display: flex;
     justify-content: space-between; }
   .searchBar form {
-    width: 40%;
-    position: relative; }
+    width: 50%;
+    position: relative;
+    display: flex; }
     .searchBar form label {
       position: absolute;
       top: 16px;
@@ -13,7 +14,7 @@
       font-size: 1.5rem; }
     .searchBar form .searchInput {
       height: 60px;
-      width: 100%;
+      width: 60%;
       padding-left: 80px;
       background-color: #2b3945;
       border: none;
@@ -22,6 +23,8 @@
       font-weight: 600;
       border-radius: 5px;
       box-shadow: 0px 0px 6px 7px rgba(0, 0, 0, 0.14); }
+    .searchBar form button {
+      margin-left: 10px; }
   .searchBar .regionPicker {
     background: #2b3945;
     border: none;

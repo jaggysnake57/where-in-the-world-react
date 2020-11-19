@@ -15,7 +15,7 @@ function App() {
 	const [lightMode, setLightMode] = useState(false);
 	const [region, setRegion] = useState('all');
 
-	const { allCountries } = useSelector(selectCountries);
+	const { allCountries, searchedCountries } = useSelector(selectCountries);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -30,17 +30,30 @@ function App() {
 					<Route exact path="/">
 						<SearchBar setRegion={setRegion} />
 						<section className="container countryGrid">
-							{allCountries?.map((country) =>
-								region === 'all' ||
-								country.region === region ? (
-									<CountryCard
-										key={country.alpha3Code}
-										countryDetails={country}
-									/>
-								) : (
-									''
-								)
-							)}
+							{/* TODO - cleaner code */}
+							{searchedCountries.length
+								? searchedCountries?.map((country) =>
+										region === 'all' ||
+										country.region === region ? (
+											<CountryCard
+												key={country.alpha3Code}
+												countryDetails={country}
+											/>
+										) : (
+											''
+										)
+								  )
+								: allCountries?.map((country) =>
+										region === 'all' ||
+										country.region === region ? (
+											<CountryCard
+												key={country.alpha3Code}
+												countryDetails={country}
+											/>
+										) : (
+											''
+										)
+								  )}
 						</section>
 					</Route>
 					<Route exact path="/:country" component={CountryPage} />
