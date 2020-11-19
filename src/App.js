@@ -7,7 +7,7 @@ import './css/App.css';
 import CountryPage from './pages/CountryPage';
 import {
 	getAllCountries,
-	selectCountry,
+	selectCountries,
 } from './features/countries/countrySlice';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -15,14 +15,13 @@ function App() {
 	const [lightMode, setLightMode] = useState(false);
 	const [region, setRegion] = useState('all');
 
-	const country = useSelector(selectCountry);
+	const { allCountries } = useSelector(selectCountries);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getAllCountries());
-	}, []);
+	}, [dispatch]);
 
-	lightMode ? console.log('light') : console.log('dark');
 	return (
 		<div className="App">
 			<Router>
@@ -31,10 +30,13 @@ function App() {
 					<Route exact path="/">
 						<SearchBar setRegion={setRegion} />
 						<section className="container countryGrid">
-							{country.countries?.map((country) =>
+							{allCountries?.map((country) =>
 								region === 'all' ||
 								country.region === region ? (
-									<CountryCard countryDetails={country} />
+									<CountryCard
+										key={country.alpha3Code}
+										countryDetails={country}
+									/>
 								) : (
 									''
 								)

@@ -1,11 +1,33 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import {
+	getOneCountry,
+	selectCountries,
+} from '../features/countries/countrySlice';
 
 import '../css/pages/CountryPage.css';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CountryPage = () => {
+	const { country } = useParams();
+	const dispatch = useDispatch();
+	const { oneCountry, alphaCodeIndex } = useSelector(selectCountries);
+
+	useEffect(() => {
+		dispatch(getOneCountry(country));
+	}, [dispatch, country]);
+
+	const convertToString = (arr) => {
+		if (typeof arr !== 'undefined') {
+			let toConvert = arr.map((item) => {
+				return item.name;
+			});
+			return toConvert.join(', ');
+		}
+	};
+
 	return (
 		<div className="countryPage">
 			<div className="container">
@@ -16,44 +38,71 @@ const CountryPage = () => {
 					{/* TODO -  use history */}
 				</Link>
 				<div className="mainContent">
-					<img src="https://restcountries.eu/data/afg.svg" alt="" />
+					{/* <div
+						className="flag"
+						style={{
+							backgroundImage: `url(${oneCountry[0]?.flag})`,
+						}}></div> */}
+
+					<img src={oneCountry[0]?.flag} alt="" />
 					<div className="countryDetails">
-						<h1>country name</h1>
+						<h1>{oneCountry[0]?.name}</h1>
 						<div className="countryBody">
 							<div className="col">
 								<h4>
-									Native Name: <span>name</span>
+									Native Name:{' '}
+									<span>{oneCountry[0]?.native}</span>
 								</h4>
 								<h4>
-									Population: <span>name</span>
+									Population:{' '}
+									<span>{oneCountry[0]?.population}</span>
 								</h4>
 								<h4>
-									Region: <span>name</span>
+									Region: <span>{oneCountry[0]?.region}</span>
 								</h4>
 								<h4>
-									Sub Region: <span>name</span>
+									Sub Region:{' '}
+									<span>{oneCountry[0]?.subregion}</span>
 								</h4>
 								<h4>
-									Capital: <span>name</span>
+									Capital:{' '}
+									<span>{oneCountry[0]?.capital}</span>
 								</h4>
 							</div>
 							<div className="col">
 								<h4>
-									Top Level Domain: <span>name</span>
+									Top Level Domain:{' '}
+									<span>{oneCountry[0]?.topLevelDomain}</span>
 								</h4>
 								<h4>
-									Currencies: <span>name</span>
+									Currencies:{' '}
+									<span>
+										{convertToString(
+											oneCountry[0]?.currencies
+										)}
+									</span>
 								</h4>
 								<h4>
-									Languages: <span>name</span>
+									Languages:{' '}
+									<span>
+										{convertToString(
+											oneCountry[0]?.languages
+										)}
+									</span>
 								</h4>
 							</div>
 						</div>
 						<div className="borderCountriesButtons">
 							<h4>Border Countries: </h4>
-							<button className="btn">name</button>
-							<button className="btn">name</button>
-							<button className="btn">name</button>
+							<div className="buttonHolder">
+								{oneCountry[0]?.borders.map((code) => (
+									<Link to={`/${alphaCodeIndex[code]}`}>
+										<button className="btn">
+											{alphaCodeIndex[code]}
+										</button>
+									</Link>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>

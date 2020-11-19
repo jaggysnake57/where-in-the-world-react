@@ -7,8 +7,18 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
+		column-gap: 5%;
+		.col {
+			min-width: 50%;
+		}
+		.flag {
+			width: 90%;
+			height: 90%;
+		}
 		img {
 			box-shadow: $boxShadow;
+			width: 100%;
+			min-width: 30vw;
 		}
 		.countryDetails {
 			h1 {
@@ -29,12 +39,18 @@
 		.borderCountriesButtons {
 			display: flex;
 			align-items: center;
+
+			.buttonHolder {
+				flex-wrap: wrap;
+			}
 			h4 {
 				margin-right: 15px;
+				width: 175px;
 			}
+
 			button {
-				padding: 5px 0;
-				width: 100px;
+				margin-bottom: 5px;
+
 				margin-right: 6px;
 			}
 		}

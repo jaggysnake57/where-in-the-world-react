@@ -4,9 +4,17 @@
 .countryPage .mainContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center; }
+  align-items: center;
+  column-gap: 5%; }
+  .countryPage .mainContent .col {
+    min-width: 50%; }
+  .countryPage .mainContent .flag {
+    width: 90%;
+    height: 90%; }
   .countryPage .mainContent img {
-    box-shadow: 0px 0px 6px 7px rgba(0, 0, 0, 0.14); }
+    box-shadow: 0px 0px 6px 7px rgba(0, 0, 0, 0.14);
+    width: 100%;
+    min-width: 30vw; }
   .countryPage .mainContent .countryDetails h1 {
     margin-bottom: 30px; }
   .countryPage .mainContent .countryBody {
@@ -20,9 +28,11 @@
   .countryPage .mainContent .borderCountriesButtons {
     display: flex;
     align-items: center; }
+    .countryPage .mainContent .borderCountriesButtons .buttonHolder {
+      flex-wrap: wrap; }
     .countryPage .mainContent .borderCountriesButtons h4 {
-      margin-right: 15px; }
+      margin-right: 15px;
+      width: 175px; }
     .countryPage .mainContent .borderCountriesButtons button {
-      padding: 5px 0;
-      width: 100px;
+      margin-bottom: 5px;
       margin-right: 6px; }
