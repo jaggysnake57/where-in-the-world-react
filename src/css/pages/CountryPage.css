@@ -1,0 +1,28 @@
+.countryPage .btnBack {
+  margin-bottom: 50px; }
+
+.countryPage .mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center; }
+  .countryPage .mainContent img {
+    box-shadow: 0px 0px 6px 7px rgba(0, 0, 0, 0.14); }
+  .countryPage .mainContent .countryDetails h1 {
+    margin-bottom: 30px; }
+  .countryPage .mainContent .countryBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px; }
+    .countryPage .mainContent .countryBody h4 {
+      margin-bottom: 10px; }
+      .countryPage .mainContent .countryBody h4 span {
+        font-weight: 300; }
+  .countryPage .mainContent .borderCountriesButtons {
+    display: flex;
+    align-items: center; }
+    .countryPage .mainContent .borderCountriesButtons h4 {
+      margin-right: 15px; }
+    .countryPage .mainContent .borderCountriesButtons button {
+      padding: 5px 0;
+      width: 100px;
+      margin-right: 6px; }

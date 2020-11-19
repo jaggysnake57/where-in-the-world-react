@@ -22,3 +22,13 @@ a {
 	max-width: 1440px;
 	margin: 0 auto;
 }
+.btn {
+	background: none;
+	background-color: $DarkMainElements;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 40px;
+	box-shadow: $boxShadow;
+	color: $White;
+	font-weight: 600;
+}

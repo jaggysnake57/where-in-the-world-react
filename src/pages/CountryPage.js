@@ -1,10 +1,20 @@
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import '../css/pages/CountryPage.css';
 
 const CountryPage = () => {
 	return (
 		<div className="countryPage">
 			<div className="container">
-				<button>back</button>
+				<Link to="/">
+					<button className="btn btnBack">
+						<FontAwesomeIcon icon={faArrowLeft} /> Back
+					</button>
+					{/* TODO -  use history */}
+				</Link>
 				<div className="mainContent">
 					<img src="https://restcountries.eu/data/afg.svg" alt="" />
 					<div className="countryDetails">
@@ -39,11 +49,11 @@ const CountryPage = () => {
 								</h4>
 							</div>
 						</div>
-						<h4>Border Countries</h4>
 						<div className="borderCountriesButtons">
-							<button>name</button>
-							<button>name</button>
-							<button>name</button>
+							<h4>Border Countries: </h4>
+							<button className="btn">name</button>
+							<button className="btn">name</button>
+							<button className="btn">name</button>
 						</div>
 					</div>
 				</div>

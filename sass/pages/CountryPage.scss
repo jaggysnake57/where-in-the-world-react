@@ -1,0 +1,42 @@
+@import '../vars';
+.countryPage {
+	.btnBack {
+		margin-bottom: 50px;
+	}
+	.mainContent {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		img {
+			box-shadow: $boxShadow;
+		}
+		.countryDetails {
+			h1 {
+				margin-bottom: 30px;
+			}
+		}
+		.countryBody {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			margin-bottom: 50px;
+			h4 {
+				margin-bottom: 10px;
+				span {
+					font-weight: 300;
+				}
+			}
+		}
+		.borderCountriesButtons {
+			display: flex;
+			align-items: center;
+			h4 {
+				margin-right: 15px;
+			}
+			button {
+				padding: 5px 0;
+				width: 100px;
+				margin-right: 6px;
+			}
+		}
+	}
+}
