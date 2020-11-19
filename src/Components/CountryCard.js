@@ -7,8 +7,9 @@ const CountryCard = ({ countryDetails }) => {
 	return (
 		<div className="countryCard">
 			<Link to={`/${name}`}>
-				{/*//!FIXME - flags are different sizes */}
-				<img className="flag" src={flag} alt="" />
+				<div
+					className="flag"
+					style={{ backgroundImage: `url(${flag})` }}></div>
 				<div className="details">
 					<h2>{name}</h2>
 					<h3>
