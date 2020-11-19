@@ -26,18 +26,19 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
-				<Header
-					lightMode={lightMode}
-					setLightMode={setLightMode}
-					setRegion={setRegion}
-				/>
+				<Header lightMode={lightMode} setLightMode={setLightMode} />
 				<Switch>
 					<Route exact path="/">
-						<SearchBar />
+						<SearchBar setRegion={setRegion} />
 						<section className="container countryGrid">
-							{country.countries?.map((country) => (
-								<CountryCard countryDetails={country} />
-							))}
+							{country.countries?.map((country) =>
+								region === 'all' ||
+								country.region === region ? (
+									<CountryCard countryDetails={country} />
+								) : (
+									''
+								)
+							)}
 						</section>
 					</Route>
 					<Route exact path="/:country" component={CountryPage} />
