@@ -41,6 +41,7 @@
 			align-items: center;
 
 			.buttonHolder {
+				display: flex;
 				flex-wrap: wrap;
 			}
 			h4 {
@@ -48,10 +49,11 @@
 				width: 175px;
 			}
 
-			button {
-				margin-bottom: 5px;
-
-				margin-right: 6px;
+			a.btn {
+				margin-bottom: 7px;
+				margin-right: 7px;
+				flex-grow: 1;
+				text-align: center;
 			}
 		}
 	}

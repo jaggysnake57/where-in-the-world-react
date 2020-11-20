@@ -1,6 +1,95 @@
 .countryGrid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	row-gap: 75px;
-	column-gap: 75px;
+	row-gap: 3vw;
+	column-gap: 3vw;
+}
+
+@media only screen and (max-width: 1150px) {
+	.countryGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.custom-select-wrapper {
+		width: 40%;
+	}
+	.searchBar {
+		form {
+			width: 60%;
+			.searchInput {
+				width: 70%;
+			}
+		}
+	}
+	.countryPage {
+		.mainContent {
+			grid-template-columns: 1fr !important;
+			img {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 850px) {
+	.countryGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.custom-select-wrapper {
+		width: 100%;
+	}
+	.searchBar .container {
+		display: block;
+		form {
+			width: 100%;
+			margin-bottom: 30px;
+			.searchInput {
+				width: 80%;
+			}
+		}
+	}
+	.borderCountriesButtons {
+		flex-direction: column;
+		h4 {
+			margin: 0;
+			margin-bottom: 20px;
+			width: 100%;
+			text-align: center;
+		}
+		.buttonHolder {
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+@media only screen and (max-width: 550px) {
+	.countryGrid {
+		grid-template-columns: 1fr;
+	}
+	.searchBar .container {
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			margin-bottom: 30px;
+			button {
+				margin: 0;
+				height: 60px;
+			}
+			.searchInput {
+				margin-bottom: 30px;
+				width: 100%;
+			}
+		}
+	}
+	.countryPage {
+		.mainContent {
+			h1 {
+				text-align: center;
+			}
+			.countryBody {
+				grid-template-columns: 1fr !important;
+				text-align: center;
+			}
+		}
+	}
 }
