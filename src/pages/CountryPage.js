@@ -96,10 +96,10 @@ const CountryPage = () => {
 							<h4>Border Countries: </h4>
 							<div className="buttonHolder">
 								{oneCountry[0]?.borders.map((code) => (
-									<Link to={`/${alphaCodeIndex[code]}`}>
-										<button className="btn">
-											{alphaCodeIndex[code]}
-										</button>
+									<Link
+										to={`/${alphaCodeIndex[code]}`}
+										className="btn">
+										{alphaCodeIndex[code]}
 									</Link>
 								))}
 							</div>
