@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { act } from 'react-dom/test-utils';
 import * as api from '../../api';
 
 export const countrySlice = createSlice({
@@ -8,6 +9,7 @@ export const countrySlice = createSlice({
 		oneCountry: [],
 		searchedCountries: [],
 		alphaCodeIndex: {},
+		error: '',
 	},
 	reducers: {
 		setAllCountries: (state, action) => {
@@ -31,6 +33,12 @@ export const countrySlice = createSlice({
 		clearSearchedCountries: (state) => {
 			state.searchedCountries = [];
 		},
+		setError: (state, action) => {
+			state.error = action.payload;
+		},
+		clearError: (state) => {
+			state.error = '';
+		},
 	},
 });
 
@@ -39,6 +47,8 @@ export const {
 	setOneCountry,
 	setSearchedCountries,
 	clearSearchedCountries,
+	setError,
+	clearError,
 } = countrySlice.actions;
 
 export const getAllCountries = () => async (dispatch) => {
@@ -63,7 +73,14 @@ export const searchForCountries = (search) => async (dispatch) => {
 		const { data } = await api.searchCountries(search);
 		dispatch(setSearchedCountries(data));
 	} catch (err) {
-		console.log(err);
+		if (err.response.data.status === 404) {
+			dispatch(
+				setError({
+					message: `No Countries found, matching ${search}, please try again`,
+				})
+			);
+		}
+		console.log(err.response);
 	}
 };
 

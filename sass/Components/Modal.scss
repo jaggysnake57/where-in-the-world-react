@@ -1,0 +1,16 @@
+.modal {
+	border: solid 4px red;
+	border-radius: 5px;
+	width: 50%;
+	margin: 0 auto 50px;
+	display: flex;
+	flex-direction: column;
+	h4 {
+		text-align: center;
+		margin: 10px;
+	}
+	.btn {
+		margin: 10px;
+		align-self: flex-end;
+	}
+}

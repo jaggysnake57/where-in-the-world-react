@@ -6,17 +6,25 @@ import SearchBar from './Components/SearchBar';
 import './css/App.css';
 import CountryPage from './pages/CountryPage';
 import {
+	clearError,
 	getAllCountries,
 	selectCountries,
 } from './features/countries/countrySlice';
 import { useDispatch, useSelector } from 'react-redux';
+import Modal from './Components/Modal';
+import FlipMove from 'react-flip-move';
 
 function App() {
 	const [lightMode, setLightMode] = useState(false);
 	const [region, setRegion] = useState('all');
 
-	const { allCountries, searchedCountries } = useSelector(selectCountries);
+	const { allCountries, searchedCountries, error } = useSelector(
+		selectCountries
+	);
 	const dispatch = useDispatch();
+	const closeModal = () => {
+		dispatch(clearError());
+	};
 
 	useEffect(() => {
 		dispatch(getAllCountries());
@@ -26,6 +34,17 @@ function App() {
 		<div className="App">
 			<Router>
 				<Header lightMode={lightMode} setLightMode={setLightMode} />
+				{/* TODO animate enter and leaving of modal */}
+				{error && (
+					<FlipMove
+						appearAnimation="accordionVertical"
+						leaveAnimation="fade">
+						<Modal
+							message={error.message}
+							closeModal={closeModal}
+						/>
+					</FlipMove>
+				)}
 				<Switch>
 					<Route exact path="/">
 						<SearchBar setRegion={setRegion} region={region} />
