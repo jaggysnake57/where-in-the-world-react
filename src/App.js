@@ -28,7 +28,7 @@ function App() {
 				<Header lightMode={lightMode} setLightMode={setLightMode} />
 				<Switch>
 					<Route exact path="/">
-						<SearchBar setRegion={setRegion} />
+						<SearchBar setRegion={setRegion} region={region} />
 						<section className="container countryGrid">
 							{/* TODO - cleaner code */}
 							{searchedCountries.length
