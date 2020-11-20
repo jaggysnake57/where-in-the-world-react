@@ -32,3 +32,45 @@ a {
 	color: $White;
 	font-weight: 600;
 }
+
+body.lightMode {
+	background-color: $LightModeBackground;
+	color: $DarkModeBackground;
+	.btn {
+		background-color: $White;
+		color: $DarkModeBackground;
+	}
+	.header {
+		background-color: $White;
+		color: $DarkModeBackground;
+		.modeSwitch {
+			color: $DarkModeBackground;
+		}
+	}
+	.searchBar {
+		.searchInput {
+			background-color: $White;
+			color: $DarkModeBackground;
+		}
+		.custom-select__trigger {
+			background-color: $White;
+			color: $DarkModeBackground;
+		}
+		.arrow::before,
+		.arrow::after {
+			background-color: $DarkModeBackground;
+		}
+		.custom-options {
+			background-color: $White;
+			.custom-option {
+				color: $DarkModeBackground;
+				&:hover {
+					background-color: $LightModeBackground;
+				}
+			}
+		}
+	}
+	.countryCard {
+		background-color: $White;
+	}
+}

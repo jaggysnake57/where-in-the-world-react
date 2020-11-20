@@ -30,6 +30,11 @@ function App() {
 		dispatch(getAllCountries());
 	}, [dispatch]);
 
+	useEffect(() => {
+		const body = document.body.classList;
+		lightMode ? body.add('lightMode') : body.remove('lightMode');
+	}, [lightMode]);
+
 	return (
 		<div className="App">
 			<Router>

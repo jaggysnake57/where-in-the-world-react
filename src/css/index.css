@@ -27,3 +27,32 @@ a {
   box-shadow: 0px 0px 6px 7px rgba(0, 0, 0, 0.14);
   color: white;
   font-weight: 600; }
+
+body.lightMode {
+  background-color: #fafafa;
+  color: #202c37; }
+  body.lightMode .btn {
+    background-color: white;
+    color: #202c37; }
+  body.lightMode .header {
+    background-color: white;
+    color: #202c37; }
+    body.lightMode .header .modeSwitch {
+      color: #202c37; }
+  body.lightMode .searchBar .searchInput {
+    background-color: white;
+    color: #202c37; }
+  body.lightMode .searchBar .custom-select__trigger {
+    background-color: white;
+    color: #202c37; }
+  body.lightMode .searchBar .arrow::before,
+  body.lightMode .searchBar .arrow::after {
+    background-color: #202c37; }
+  body.lightMode .searchBar .custom-options {
+    background-color: white; }
+    body.lightMode .searchBar .custom-options .custom-option {
+      color: #202c37; }
+      body.lightMode .searchBar .custom-options .custom-option:hover {
+        background-color: #fafafa; }
+  body.lightMode .countryCard {
+    background-color: white; }
