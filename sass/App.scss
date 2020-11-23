@@ -75,6 +75,9 @@
 				margin: 0;
 				height: 60px;
 			}
+			.searchBtn {
+				margin-bottom: 30px;
+			}
 			.searchInput {
 				margin-bottom: 30px;
 				width: 100%;
@@ -91,5 +94,8 @@
 				text-align: center;
 			}
 		}
+	}
+	.modal .modalBox {
+		padding: 10px !important;
 	}
 }

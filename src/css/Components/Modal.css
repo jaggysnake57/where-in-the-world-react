@@ -1,10 +1,23 @@
 .modal {
-  border: solid 4px red;
-  border-radius: 5px;
-  width: 50%;
-  margin: 0 auto 50px;
-  display: flex;
-  flex-direction: column; }
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  top: 0;
+  position: absolute; }
+  .modal .modalBox {
+    border: solid 4px red;
+    background-color: darkred;
+    border-radius: 5px;
+    margin: 100px 15px 0;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    color: white; }
   .modal h4 {
     text-align: center;
     margin: 10px; }

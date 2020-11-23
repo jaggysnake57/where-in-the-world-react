@@ -31,6 +31,17 @@ a {
 	box-shadow: $boxShadow;
 	color: $White;
 	font-weight: 600;
+	cursor: pointer;
+	&:hover {
+		box-shadow: none;
+	}
+}
+
+.btnDanger {
+	background-color: red !important;
+	&:hover {
+		background-color: darkred !important;
+	}
 }
 
 body.lightMode {

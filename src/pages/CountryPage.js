@@ -35,7 +35,6 @@ const CountryPage = () => {
 					<button className="btn btnBack">
 						<FontAwesomeIcon icon={faArrowLeft} /> Back
 					</button>
-					{/* TODO -  use history */}
 				</Link>
 				<div className="mainContent">
 					{/* <div
@@ -55,7 +54,9 @@ const CountryPage = () => {
 								</h4>
 								<h4>
 									Population:{' '}
-									<span>{oneCountry[0]?.population}</span>
+									<span>
+										{oneCountry[0]?.population.toLocaleString()}
+									</span>
 								</h4>
 								<h4>
 									Region: <span>{oneCountry[0]?.region}</span>

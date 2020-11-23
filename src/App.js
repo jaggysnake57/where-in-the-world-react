@@ -35,49 +35,36 @@ function App() {
 		lightMode ? body.add('lightMode') : body.remove('lightMode');
 	}, [lightMode]);
 
+	const populateCountries = (countriesArray) => {
+		let countryCards = [];
+		countriesArray?.map((country) =>
+			region === 'all' || country.region === region
+				? countryCards.push(
+						<CountryCard
+							key={country.alpha3Code}
+							countryDetails={country}
+						/>
+				  )
+				: ''
+		);
+		return countryCards;
+	};
+
 	return (
 		<div className="App">
 			<Router>
 				<Header lightMode={lightMode} setLightMode={setLightMode} />
-				{/* TODO animate enter and leaving of modal */}
+
 				{error && (
-					<FlipMove
-						appearAnimation="accordionVertical"
-						leaveAnimation="fade">
-						<Modal
-							message={error.message}
-							closeModal={closeModal}
-						/>
-					</FlipMove>
+					<Modal message={error.message} closeModal={closeModal} />
 				)}
 				<Switch>
 					<Route exact path="/">
 						<SearchBar setRegion={setRegion} region={region} />
 						<section className="container countryGrid">
-							{/* TODO - cleaner code */}
 							{searchedCountries.length
-								? searchedCountries?.map((country) =>
-										region === 'all' ||
-										country.region === region ? (
-											<CountryCard
-												key={country.alpha3Code}
-												countryDetails={country}
-											/>
-										) : (
-											''
-										)
-								  )
-								: allCountries?.map((country) =>
-										region === 'all' ||
-										country.region === region ? (
-											<CountryCard
-												key={country.alpha3Code}
-												countryDetails={country}
-											/>
-										) : (
-											''
-										)
-								  )}
+								? populateCountries(searchedCountries)
+								: populateCountries(allCountries)}
 						</section>
 					</Route>
 					<Route exact path="/:country" component={CountryPage} />

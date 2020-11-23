@@ -53,6 +53,8 @@
     .searchBar .container form button {
       margin: 0;
       height: 60px; }
+    .searchBar .container form .searchBtn {
+      margin-bottom: 30px; }
     .searchBar .container form .searchInput {
       margin-bottom: 30px;
       width: 100%; }
@@ -60,4 +62,6 @@
     text-align: center; }
   .countryPage .mainContent .countryBody {
     grid-template-columns: 1fr !important;
-    text-align: center; } }
+    text-align: center; }
+  .modal .modalBox {
+    padding: 10px !important; } }

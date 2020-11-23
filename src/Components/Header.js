@@ -13,7 +13,6 @@ const Header = ({ lightMode, setLightMode }) => {
 					className="modeSwitch"
 					type="button"
 					onClick={() => setLightMode(!lightMode)}>
-					{/* TODO - box around button removed on tab */}
 					{lightMode ? (
 						<>
 							<FontAwesomeIcon icon={faMoonSolid} />{' '}

@@ -39,11 +39,13 @@ const SearchBar = ({ setRegion, region }) => {
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}
 					/>
+
+					<button className="btn searchBtn">Search</button>
 					<button
 						type="button"
-						className="btn"
+						className="btn btnDanger"
 						onClick={() => handleClear()}>
-						reset
+						Reset
 					</button>
 				</form>
 

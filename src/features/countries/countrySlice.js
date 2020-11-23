@@ -25,7 +25,6 @@ export const countrySlice = createSlice({
 		},
 		setOneCountry: (state, action) => {
 			state.oneCountry = action.payload;
-			// TODO - add to state as object not array
 		},
 		setSearchedCountries: (state, action) => {
 			state.searchedCountries = action.payload;

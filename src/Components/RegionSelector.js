@@ -8,6 +8,12 @@ const RegionSelector = ({ setRegion, region }) => {
 	const handleRegion = (value) => {
 		setRegion(value);
 	};
+	window.addEventListener('click', function (e) {
+		const select = document.querySelector('.custom-select');
+		if (!select?.contains(e.target)) {
+			setOpen(false);
+		}
+	});
 
 	return (
 		<div onClick={() => setOpen(!open)} class="custom-select-wrapper">

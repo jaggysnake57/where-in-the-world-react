@@ -13,7 +13,7 @@ const CountryCard = ({ countryDetails }) => {
 				<div className="details">
 					<h2>{name}</h2>
 					<h3>
-						Population: <span>{population}</span>
+						Population: <span>{population.toLocaleString()}</span>
 					</h3>
 					<h3>
 						Region: <span>{region}</span>
