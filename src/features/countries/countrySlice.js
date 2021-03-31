@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { act } from 'react-dom/test-utils';
+
 import * as api from '../../api';
 
 export const countrySlice = createSlice({
