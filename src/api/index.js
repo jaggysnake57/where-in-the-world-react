@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const baseURL = 'https://restcountries.eu/rest/v2/';
+const baseURL = 'https://restcountries.com/v3.1/';
 const allCountriesFields =
-	'?fields=name;capital;region;population;flag;alpha3Code;';
+	'?fields=name,capital,region,population,flags,alpha3Code;';
 const singleCountryFields = `${allCountriesFields}nativeName;subregion;borders;currencies;topLevelDomain;languages;`;
 
 export const getAllCountries = () =>

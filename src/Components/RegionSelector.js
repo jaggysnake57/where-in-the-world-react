@@ -3,7 +3,6 @@ import '../css/Components/RegionSelector.css';
 
 const RegionSelector = ({ setRegion, region }) => {
 	const [open, setOpen] = useState(false);
-	const [selected, setSelected] = useState('');
 
 	const handleRegion = (value) => {
 		setRegion(value);
@@ -16,15 +15,15 @@ const RegionSelector = ({ setRegion, region }) => {
 	});
 
 	return (
-		<div onClick={() => setOpen(!open)} class="custom-select-wrapper">
-			<div class={open ? 'custom-select open' : 'custom-select'}>
-				<div class="custom-select__trigger">
+		<div onClick={() => setOpen(!open)} className="custom-select-wrapper">
+			<div className={open ? 'custom-select open' : 'custom-select'}>
+				<div className="custom-select__trigger">
 					<span>
 						{region === 'all' ? 'Please select a region' : region}
 					</span>
-					<div class="arrow"></div>
+					<div className="arrow"></div>
 				</div>
-				<div class="custom-options">
+				<div className="custom-options">
 					<span
 						onClick={(e) => handleRegion(e.target.dataset.value)}
 						className="custom-option"

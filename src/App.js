@@ -18,9 +18,8 @@ function App() {
 	const [lightMode, setLightMode] = useState(false);
 	const [region, setRegion] = useState('all');
 
-	const { allCountries, searchedCountries, error } = useSelector(
-		selectCountries
-	);
+	const { allCountries, searchedCountries, error } =
+		useSelector(selectCountries);
 	const dispatch = useDispatch();
 	const closeModal = () => {
 		dispatch(clearError());
@@ -69,10 +68,6 @@ function App() {
 					</Route>
 					<Route exact path="/:country" component={CountryPage} />
 				</Switch>
-
-				{/* header */}
-				{/* search bar  */}
-				{/* array of countries */}
 			</Router>
 		</div>
 	);
